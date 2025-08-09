@@ -1,8 +1,12 @@
 steps:
+# Build the container image
   - name: gcr.io/cloud-builders/docker
     args: ["build", "-t", "$_AR_HOSTNAME/$_PROJECT_ID/cloud-run-source-deploy/$_SERVICE_NAME:$_SERVER", ".", "-f", "Dockerfile", "--cache-from", "$_AR_HOSTNAME/$_PROJECT_ID/cloud-run-source-deploy/$_SERVICE_NAME:$_SERVER"]
-
-
+    id: Build
+# Push the container image to the registry
+  - name: gcr.io/cloud-builders/docker
+    args: ["push", "$_AR_HOSTNAME/$_PROJECT_ID/cloud-run-source-deploy/$_SERVICE_NAME:$_SERVER"]
+    id: Push
 
 
 images:
