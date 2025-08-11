@@ -1,3 +1,4 @@
+"""Utility functions for audio processing."""
 from io import BytesIO
 
 import numpy as np
@@ -5,6 +6,7 @@ import soundfile
 
 
 def audio_array_to_buffer(audio_array: np.array, sample_rate: int) -> BytesIO:
+    """Convert a numpy audio array to a WAV buffer in memory."""
     buffer = BytesIO()
     soundfile.write(
         "test.wav", audio_array, sample_rate, format="WAV", subtype="PCM_16"

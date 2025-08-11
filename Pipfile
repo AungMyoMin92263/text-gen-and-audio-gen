@@ -21,6 +21,7 @@ isort = "*"
 tensorflow-macos = "*"
 tensorflow-metal = "*"
 pylint = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.10"
