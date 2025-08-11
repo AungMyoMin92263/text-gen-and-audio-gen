@@ -2,7 +2,7 @@ name: Code check sample
 on:
   push:
     branches:
-      - main
+      - stg
 
 jobs:
   test:
