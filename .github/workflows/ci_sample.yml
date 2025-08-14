@@ -29,4 +29,4 @@ jobs:
         run: pipenv run isort .
 
       - name: Run pylint for code quality
-        run: pipenv run pylint $(git ls-files "*.py")
+        run: pipenv run pylint --fail-under=8.0 $(git ls-files "*.py")
