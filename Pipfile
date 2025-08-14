@@ -18,8 +18,6 @@ accelerate = "*"
 ipykernel = "*"
 black = "*"
 isort = "*"
-tensorflow-macos = "*"
-tensorflow-metal = "*"
 pylint = "*"
 pytest = "*"
 

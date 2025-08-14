@@ -21,3 +21,12 @@ jobs:
 
       - name: Install dev libs
         run: pipenv install --dev --python $(which python)
+
+      - name: Run Black for code formatting
+        run: pipenv run black .
+
+      - name: Run isort for code formatting
+        run: pipenv run isort .
+
+      - name: Run pylint for code quality
+        run: pipenv run pylint $(git ls-files "*.py")
