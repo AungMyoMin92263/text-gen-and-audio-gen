@@ -30,3 +30,9 @@ jobs:
 
       - name: Run pylint for code quality
         run: pipenv run pylint --fail-under=8.0 $(git ls-files "*.py")
+
+      - name: Build Docker image
+        run: docker build -t test_run .
+
+      - name: Run Unit Test
+        run: docker run --rm test_run pytest
